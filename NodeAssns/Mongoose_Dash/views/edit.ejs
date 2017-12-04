@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Mongoose</title>
+</head>
+<body>
+    <h1>Edit <%= thisMong.name %>'s Profile</h1>
+    <form action="/updateMong/<%=thisMong._id %>" method="POST">
+        Name: <input value="<%= thisMong.name %>" type="text" name="name"><br><br>
+        Age: <input value="<%= thisMong.age %>" type="text" name="age"><br><br>
+        Hobby: <input value="<%= thisMong.hobby %>" type="text" name="hobby"><br><br>
+        <input type="submit" value="Update"><br>
+    </form>
+    <br><br>
+    <a href="/">Back</a>
+</body>
+</html>

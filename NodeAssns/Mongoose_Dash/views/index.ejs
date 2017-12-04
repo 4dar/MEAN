@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongooses!</title>
+</head>
+<body>
+    <h1>Welcome to the Pack!</h1>
+    <% for(var i = 0; i < mongs.length; i++) { %>
+        <p>Name: <a href="/profile/<%=mongs[i]._id %>"><%= mongs[i].name %></a></p>
+        <hr>
+    <% } %>
+    <br>
+    <a href="/newPage">Add new Mongoose</a>
+</body>
+</html>
