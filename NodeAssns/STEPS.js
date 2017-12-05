@@ -110,3 +110,42 @@ db.'collection_name'.update({_id: ObjectId("5463d871a6a96d5ed6252f4d")}, {$push:
 db.'collection_name'.update({QUERY}, {$pop: {array_key: (1 or -1)}}) => removies either the first or last element from an array. (1 for last item, -1 for first item)
 db.'collection_name'.update({QUERY}, {$pull: {array_key: VALUE}}) => removes a specified value from an array
 db.'collection_name'.update({QUERY}, {$addToSet: {key: value}}) => similar to push, but will not add value if it already exists
+
+
+
+*** MODULARIZATION ***
+
+PROJECT FOLDER
+  client/
+    static/
+    views/
+      index.ejs
+      main.ejs
+  node_modules/
+  server/
+    config/
+      mongoose.js
+      routes.js
+    controllers/
+      quotes.js
+    models/
+      quote.js
+  package.json
+  server.js  
+
+// config // mongoose_setup //
+
+  var mongoose = require('mongoose');
+  mongoose.connect('mongodb://localhost/mongooseDash');
+  
+  var fs = require('fs')
+  var path = require('path')
+  
+  var models_path = path.join(__dirname, '/../models');
+  fs.readdirSync(models_path).forEach(function(file){
+      if(file.indexOf('.js') > 0) {
+          require(models_path+ '/' + file);
+      }
+  })
+
+// // //
