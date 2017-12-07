@@ -1,7 +1,9 @@
 var express = require("express");
 var path = require("path");
+var session = require("express-session")
 var app = express();
 var bodyParser = require('body-parser');
+var bcrypt = require('bcrypt');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/client/static"));
 app.set('views', __dirname + '/client/views');

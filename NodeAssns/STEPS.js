@@ -43,25 +43,27 @@ copy what's needed from other package.json file
 
 // PACKAGE .JSON
 {
-    "name": "Survery_Form",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node server.js"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "body-parser": "^1.15.0",
-      "ejs": "^2.5.7",
-      "express": "^4.13.4",
-      "express-session": "^1.15.6",
-      "mongoose": "^4.13.5"
-    }
+  "name": "Login_Reg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.15.0",
+    "ejs": "^2.5.7",
+    "express": "^4.13.4",
+    "express-session": "^1.15.6",
+    "mongoose": "^4.13.5"
   }
+}
+
 
 npm install
 
