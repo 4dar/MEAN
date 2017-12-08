@@ -6,13 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  user = {
-    firstName: ''
+  switches: Array<any> = [true, true, true, true, true, true, true, true, true, true];
+  
+  switchOn(idx){
+    this.switches[idx] = !this.switches[idx]
   }
-
-
-  onSubmit(){
-    console.log("On Submit Function works!")
-  }
-
 }

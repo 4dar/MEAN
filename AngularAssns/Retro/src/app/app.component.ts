@@ -35,4 +35,14 @@ export class AppComponent implements OnInit{
   ngOnInit() {
     this.colorPicker();
   }
+
+
+  onButtonClick() {
+    this.colorPicker();
+  }
+
+  onButtonClick2(event) { 
+    console.log(`Click event is working, data:`, event);
+  }
+
 }

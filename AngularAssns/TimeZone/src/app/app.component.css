@@ -1,0 +1,17 @@
+.TimeButton{
+    height: 40px;
+    width: 70px;
+    box-shadow: 2px 4px;
+    border-radius: 3px;
+}
+
+#ClearButton{
+    height: 50px;
+    width: 80px;
+    box-shadow: 2px 4px;
+    border-radius: 3px;
+}
+
+.selected {
+    background-color: yellow;
+}

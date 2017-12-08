@@ -1,0 +1,7 @@
+<h1>Switchboard!</h1>
+<br><br><br>
+<div *ngFor="let x of switches; let idx = index" class="BrownBox">
+  <button (click)="switchOn(idx)" class="myButton" [ngClass]="{on: x, off: !x}"><span *ngIf="x">On</span><span *ngIf="!x">Off</span></button>
+</div>
+
+

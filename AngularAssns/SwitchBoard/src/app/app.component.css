@@ -1,0 +1,19 @@
+.BrownBox{
+    display: inline-block;
+    background-color: #945308;
+    height: 120px;
+    width: 120px;
+}
+.myButton{
+    display: inline-block;
+    margin: 15px;
+    height: 90px;
+    width: 90px;
+    font-size: 30px;
+}
+.on{
+    background-color: green;
+}
+.off{
+    background-color: red;
+}

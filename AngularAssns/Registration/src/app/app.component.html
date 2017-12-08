@@ -1,0 +1,135 @@
+<h2>Registration!</h2> 
+
+<div *ngIf="regUser"><span [ngStyle]="{'color': 'green'}">Thank you for registering with us {{ regUser.firstName }}. We just sent you a confirmation email at <a href="#">{{ regUser.email }}</a>, and we will send all mail to {{ regUser.address }}, {{ regUser.city }}, {{ regUser.state }}.</span>
+</div>
+
+<form (submit)="onSubmit()" #formData='ngForm'>
+    <input 
+      type="text" 
+      name="email" 
+      required 
+      minlength="5" 
+      maxlength="60"
+      placeholder="Email"
+      [(ngModel)]="user.email"
+      #email='ngModel'
+    />
+    <p class="error" *ngIf="email.valid != true && !email.pristine">Email required.</p>
+    <br><br>
+    <input 
+      type="text" 
+      name="firstName" 
+      required 
+      minlength="2" 
+      maxlength="24"
+      placeholder="First Name"
+      [(ngModel)]="user.firstName"
+      #firstName='ngModel'
+    />
+    <p class="error" *ngIf="firstName.valid != true && !firstName.pristine">First name required.</p>
+    <br><br>
+    <input 
+      type="text" 
+      name="lastName" 
+      required 
+      minlength="2" 
+      maxlength="24"
+      placeholder="Last Name"
+      [(ngModel)]="user.lastName"
+      #lastName='ngModel'
+    />
+    <p class="error" *ngIf="lastName.valid != true && !lastName.pristine">Last name required.</p>
+    <br><br>
+    <input 
+      type="text" 
+      name="password" 
+      required 
+      minlength="8" 
+      maxlength="24"
+      placeholder="Password"
+      pattern="^([a-zA-Z0-9@*#]{8,15})$"
+      [(ngModel)]="user.password"
+      #password='ngModel'
+    />
+    <p class="error" *ngIf="password.valid != true && !password.pristine">Password must be at least 8 characters long.</p>
+    <br><br>
+    <input 
+    type="text" 
+    name="pConfirm" 
+    required 
+    minlength="8" 
+    maxlength="24"
+    placeholder="Password Confirmation"
+    pattern="^([a-zA-Z0-9@*#]{8,15})$"
+    [(ngModel)]="user.pConfirm"
+    #pConfirm='ngModel'
+    />
+    <p class="error" *ngIf="user.password !== user.pConfirm">Password does not match.</p>
+    <br><br>
+    <input 
+    type="text" 
+    name="address" 
+    required  
+    placeholder="Street Address"
+    [(ngModel)]="user.address"
+    #address='ngModel'
+    />
+    <p class="error" *ngIf="address.valid != true && !address.pristine">Address required.</p>
+    <br><br>
+    <input 
+    type="text" 
+    name="unit"  
+    maxlength="20"
+    placeholder="Unit/Apt #"
+    [(ngModel)]="user.unit"
+    #unit='ngModel'
+    />
+    <br><br>
+    <input 
+    type="text" 
+    name="city" 
+    required 
+    minlength="3" 
+    maxlength="50"
+    placeholder="City"
+    [(ngModel)]="user.city"
+    #city='ngModel'
+    />
+    <p class="error" *ngIf="city.valid != true && !city.pristine">City required.</p>
+    <br><br>
+    <select 
+    name="state" 
+    [(ngModel)]="user.state" 
+    #state="ngModel" 
+    required>
+      <option *ngFor="let s of states" value="{{ s }}" name="stateOption">{{ s }}</option>
+    </select>
+    <p class="error" *ngIf="state.valid != true && !state.pristine">State required.</p>
+    <br>
+    <p><span [ngStyle]="{'color': 'green'}">Feeling Lucky?</span></p>
+    Yes <input 
+    type="radio" 
+    name="lucky"
+    value="Yes"
+    checked 
+    required 
+    [(ngModel)]="user.lucky"
+    #lucky='ngModel'
+    />
+    No <input 
+    type="radio" 
+    name="lucky"
+    value="No"
+    required 
+    [(ngModel)]="user.lucky"
+    #lucky='ngModel'
+    />
+    <p class="error" *ngIf="lucky.valid != true && !lucky.pristine">Choosing how you feel is required</p>
+    <br><br>
+    <input type="submit" [disabled]="!formData.valid">
+</form>
+
+
+<br>
+  {{ user | json }}
+

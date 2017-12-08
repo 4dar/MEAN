@@ -1,0 +1,4 @@
+<div class="BrownBox">
+    <button (click)="switchOn()" *ngIf="off" class="myButton" [ngStyle]="{'background-color': 'red'}">Off</button>
+    <button (click)="switchOff()" *ngIf="!off" class="myButton" [ngStyle]="{'background-color': 'green'}">On</button>
+</div>

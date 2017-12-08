@@ -3,3 +3,7 @@
 
 
 <div class="colorBox" *ngFor="let color of x" [ngStyle]="{'background-color': color}"></div>
+
+<button (click)="onButtonClick()" >Click me!</button>
+
+<button (click)="onButtonClick2($event)">Click me!</button>
