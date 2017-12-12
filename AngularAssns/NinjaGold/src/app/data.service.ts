@@ -10,13 +10,13 @@ export class DataService {
 
   farmGold(sender: string){
     if(sender === 'farm'){
-    this.rando = Math.floor(Math.random() * 3) + 2;      
+    this.rando = Math.floor(Math.random() * 4 + 2);      
     }
     if(sender === 'cave'){
-    this.rando = Math.floor(Math.random() * 5 + 5);      
+    this.rando = Math.floor(Math.random() * 6) + 5;      
     }
     if(sender === 'house'){
-    this.rando = Math.floor(Math.random() * 8 + 7);      
+    this.rando = Math.floor(Math.random() * 9) + 7;      
     }
     if(sender === 'casino'){
     this.rando = Math.floor(Math.random() * 200 - 100);      

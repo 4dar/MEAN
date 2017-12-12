@@ -1,7 +1,8 @@
 <div>
   <h1>Add a Quote</h1>
   <form (submit)="onSubmit(formData)" #formData="ngForm">
-    <textarea required minlength="3" [(ngModel)]="newQuote.quoteText" #quoteText="ngModel" name="quoteText" cols="30" rows="10" placeholder="Write your quote!"></textarea><br>
+    <textarea required minlength="3" 
+    [(ngModel)]="newQuote.quoteText" #quoteText="ngModel" name="quoteText" cols="30" rows="10" placeholder="Write your quote!"></textarea><br>
     <input [(ngModel)]="newQuote.quoteAuthor" #quoteAuthor="ngModel" minlength="2" required type="text" name="quoteAuthor" placeholder="Author">
     <input type="submit" value="Add Quote" [disabled]="!formData.valid">
   </form>
