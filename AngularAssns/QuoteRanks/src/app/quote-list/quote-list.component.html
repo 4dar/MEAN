@@ -1,0 +1,10 @@
+<div>
+  <h1>Quotes List</h1>
+  <fieldset class="quote" *ngFor="let quote of quotes">
+    <p>{{ quote.quoteText }}</p>
+    <p>{{ quote.quoteAuthor }}</p>
+    <div class='buttons'>
+        <button class='delete' (click)="delete(quote)">Delete</button>
+    </div>
+  </fieldset>
+</div>

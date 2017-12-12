@@ -1,0 +1,17 @@
+<fieldset>
+  <legend>PowerComponent</legend>
+  <h2>Initial Power Level:</h2>
+  <form>
+    <select name="initialPower" id="initialPower">
+      <option *ngFor="let power of powerLevel">{{ power }}</option>
+    </select>
+    <button>Calculate Power</button>
+  </form>
+
+<app-human-component [power]="power"></app-human-component>
+<app-saiyan-component [power]="power"></app-saiyan-component>
+<app-super-saiyan-component [power]="power"></app-super-saiyan-component>
+<app-super-saiyan-two-component [power]="power"></app-super-saiyan-two-component>
+<app-super-saiyan-three-component [power]="power"></app-super-saiyan-three-component>
+<app-super-saiyan-four-component [power]="power"></app-super-saiyan-four-component>
+</fieldset>

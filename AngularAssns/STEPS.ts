@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms'; // <-- Import FormsModule
 import { HttpModule } from '@angular/http'; // <-- Import HttpModule
 
+import { DataService } from './data.service';
+
 @NgModule({ 
 	declarations: [ 
 		AppComponent
@@ -15,11 +17,16 @@ import { HttpModule } from '@angular/http'; // <-- Import HttpModule
 		FormsModule, // <-- Include module in our AppModules
 		HttpModule // <-- Include module in our AppModules
 	], 
-	providers: [], 
+	providers: [DataService], 
 	bootstrap: [AppComponent] 
 }) 
 
 export class AppModule { }
+
+///// in each component.ts add this: ///
+
+import { DataService } from '../data.service'
+constructor(private _dataService: DataService) { }
 
 ////////////////////////////////////////
 

@@ -1,0 +1,14 @@
+#mainBox {
+    background-color: lightblue;
+    height: 300px;
+    width: 1000px;
+}
+
+h5{
+    margin: 10px;
+}
+
+p {
+    font-size: 20px;
+    margin: 20px; 
+}

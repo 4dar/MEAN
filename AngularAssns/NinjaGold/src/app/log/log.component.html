@@ -1,0 +1,8 @@
+<fieldset>
+  <legend>Log</legend>
+  <ul>
+      <li *ngFor="let message of _dataService.messages">
+            <p [ngStyle]="{'color': 'green'}"> {{ message }} </p>
+      </li>
+  </ul>
+</fieldset>

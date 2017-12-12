@@ -1,0 +1,12 @@
+#navBox{
+    background-color: lightblue;
+    height: 300px;
+    width: 150px;
+}
+
+button{
+    height: 20px;
+    width: 90px;
+    margin-left: 30px;
+    margin-top: 20px;
+}
