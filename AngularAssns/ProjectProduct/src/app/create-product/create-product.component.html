@@ -1,0 +1,26 @@
+<h1>Create a New Product!</h1>
+<form (submit)="onSubmit()" #formData='ngForm'>
+  <input 
+  type="text"
+  name="title"
+  required
+  minlength="3"
+  maxlength="30"
+  placeholder="Title"
+  [(ngModel)]="product.title"
+  #title='ngModel'
+  >
+  <p class="error" *ngIf="title.valid != true && !title.pristine">Title required.</p>  
+  <input 
+  type="text"
+  name="price"
+  required
+  minlength="1"
+  maxlength="20"
+  placeholder="Price"
+  [(ngModel)]="product.price"
+  #price='ngModel'
+  >
+  <p class="error" *ngIf="price.valid != true && !price.pristine">Price required.</p>    
+  <input type="submit" [disabled]="!formData.valid">
+</form>

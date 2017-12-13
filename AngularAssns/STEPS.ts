@@ -1,25 +1,28 @@
 // Copy & paste to app.module.ts -->
-
-import { NgModule } from '@angular/core'; 
-import { BrowserModule } from '@angular/platform-browser'; 
-import { AppComponent } from './app.component'; 
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- Import FormsModule
 import { HttpModule } from '@angular/http'; // <-- Import HttpModule
-
+import { AppRoutingModule } from './app-routing.module';
 import { DataService } from './data.service';
+import { AppComponent } from './app.component';
+import { HttpClient } from '@angular/common/http';
 
-@NgModule({ 
-	declarations: [ 
-		AppComponent
-	], 
-	imports: [
-		BrowserModule,
-		FormsModule, // <-- Include module in our AppModules
-		HttpModule // <-- Include module in our AppModules
-	], 
-	providers: [DataService], 
-	bootstrap: [AppComponent] 
-}) 
+
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    HttpClient,
+    AppRoutingModule
+  ],
+  providers: [DataService],
+  bootstrap: [AppComponent]
+})
 
 export class AppModule { }
 
@@ -45,3 +48,10 @@ export class User {
   }
 
 //////////////////////////////////////
+ng new 'project-name' --routing
+
+ng generate service 'service-name'
+
+
+ng generate class 'class-name'
+
